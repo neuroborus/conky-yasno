@@ -1,0 +1,46 @@
+conky.config = {
+-- Yasno power outages
+
+-- Conky settings #
+	background = false,
+	update_interval = 14400,
+	double_buffer = true,
+	no_buffers = true,
+
+-- Window specifications #
+	own_window = true,
+	own_window_transparent = true,
+	own_window_argb_visual = false,
+	own_window_class = 'override',
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+
+	minimum_width = 620,
+	maximum_width = 1241,
+
+	minimum_height = 877,
+
+-- Alignment #
+	alignment = 'top_left',
+	gap_x = 100,
+	gap_y = 60,
+
+	border_inner_margin = 10,
+	border_outer_margin = 10,
+
+-- Graphics settings #
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = true,
+	draw_graph_borders = false,
+
+};
+
+conky.text = [[
+${execp curl -o ~/conky-yasno/yasno.pdf -f "$(cat ~/conky-yasno/.private_url.txt)"}
+${execp chmod 644 ~/conky-yasno/yasno.pdf}
+${if_existing ~/conky-yasno/yasno.png}
+${execp rm ~/conky-yasno/yasno.png}
+${endif}
+${execp pdftoppm -singlefile -png ~/conky-yasno/yasno.pdf ~/conky-yasno/yasno}
+${image ~/conky-yasno/yasno.png -p 0,0 -s 620x877}
+]];
