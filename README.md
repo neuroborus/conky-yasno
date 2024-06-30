@@ -1,5 +1,9 @@
 # conky-yasno
-This conky theme displays [YASNO](https://yasno.com.ua/) power outages.
+This conky theme displays [YASNO](https://yasno.com.ua/) power outages with real-time pinging of remote DDNS.
+
+* Line is RED - no power
+* Line is GREEN - power is on
+* Line is ORANGE - ping is not set up
 
 ![](./docs/screenshot.png)
 
@@ -16,13 +20,22 @@ This script requires modules/libraries:
 ```
 ./install
 ```
+## Config
 
-## Add your address
+Rename `config.example.json` to `config.json` and fill with your values.
+
+### Add your address
 1. Go to [Yasno power outages page](https://yasno.com.ua/schedule-turn-off-electricity) and choose your address;
 2. Copy the link of the button that leads to downloading the pdf file;
 ![](./docs/url-getting.png)
-3. Paste your link to `.private_url.txt` as indicated in `.private_url_example.txt`.
+3. Paste your link to `config.json` - `private_url` field.
+
+### Online status
+I used `white ip` and router settings such as `DDNS` and `allowing pings` from the internet to check status.
+You can use different tools if you want, from a smart outlet - to an old phone.
+
+By default this function is disabled, so you will need to turn on it and insert your url to `config.json`.
 
 ## Tests
-This code/script has been tested on Ubuntu 22
+This code has been tested on Ubuntu 22
 

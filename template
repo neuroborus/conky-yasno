@@ -3,7 +3,7 @@ conky.config = {
 
 -- Conky settings #
 	background = false,
-	update_interval = 1,
+	update_interval = 60,
 	double_buffer = true,
 	no_buffers = true,
 
@@ -33,9 +33,14 @@ conky.config = {
 	draw_borders = true,
 	draw_graph_borders = false,
 
+	lua_load = '~/conky-yasno/scripts/conky_read_position.lua',
+	lua_draw_hook_pre = 'conky_read_position',
 };
 
 conky.text = [[
 ${execpi 3600 ~/conky-yasno/scripts/background.sh}
-${image ~/conky-yasno/yasno.png -p 0,0 -s 620x877}
+${execpi 60 ~/conky-yasno/scripts/status.sh}
+${execpi 60 ~/conky-yasno/scripts/line.sh}
+${image ~/conky-yasno/tmp/yasno.png -p 0,0 -s 620x877}
+${lua_parse conky_read_position}
 ]];

@@ -1,10 +1,14 @@
 #!/bin/bash
 
 echo "Start installing conky-theme"
+echo "Copying conkyrc template..."
 cp template conkyrc
-echo "Copying conkyrc template"
-echo "Generating yasno.pdf"
+
+echo "Moving conkyrc..."
 mv conkyrc ~/.conkyrc
-echo "Moving conkyrc"
-echo "done."
+
+echo "Installing config..."
+~/conky-yasno/scripts/config.sh
+
+echo "Starting..."
 conky
