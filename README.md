@@ -1,5 +1,9 @@
 # conky-yasno
-This conky theme displays [YASNO](https://yasno.com.ua/) power outages.
+This conky theme displays [YASNO](https://yasno.com.ua/) power outages with real-time pinging of remote DDNS.
+
+* Line is RED - no power
+* Line is GREEN - power is on
+* Line is ORANGE - ping is not set up
 
 ![](./docs/screenshot.png)
 
@@ -33,5 +37,5 @@ You can use different tools if you want, from a smart outlet - to an old phone.
 By default this function is disabled, so you will need to turn on it and insert your url to `config.json`.
 
 ## Tests
-This code/script has been tested on Ubuntu 22
+This code has been tested on Ubuntu 22
 
