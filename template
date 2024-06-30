@@ -33,14 +33,14 @@ conky.config = {
 	draw_borders = true,
 	draw_graph_borders = false,
 
-	lua_load = '~/conky-yasno/scripts/conky_read_position.lua',
-	lua_draw_hook_pre = 'conky_read_position',
+	lua_load = '~/conky-yasno/scripts/conky_set_line.lua',
+	lua_draw_hook_pre = 'conky_set_line',
 };
 
 conky.text = [[
 ${execpi 3600 ~/conky-yasno/scripts/background.sh}
-${execpi 60 ~/conky-yasno/scripts/status.sh}
-${execpi 60 ~/conky-yasno/scripts/line.sh}
+${exec ~/conky-yasno/scripts/status.sh}
+${exec ~/conky-yasno/scripts/line.sh}
 ${image ~/conky-yasno/tmp/yasno.png -p 0,0 -s 620x877}
-${lua_parse conky_read_position}
+${lua_parse conky_set_line}
 ]];

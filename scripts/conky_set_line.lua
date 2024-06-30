@@ -12,7 +12,7 @@ function read_position_from_file(file_path)
 end
 
 -- Function to return position for the image
-function conky_read_position()
+function conky_set_line()
     local home_dir = os.getenv("HOME")
     local position_file = home_dir .. "/conky-yasno/tmp/vars/line_position"
     local result = read_position_from_file(position_file)
