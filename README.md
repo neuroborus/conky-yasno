@@ -5,7 +5,7 @@ This conky theme displays [YASNO](https://yasno.com.ua/) power outages with real
 * Line is GREEN - power is on
 * Line is ORANGE - ping is not set up
 
-![](./docs/screenshot.png)
+![](./docs/desktop.png)
 
 ## Dependencies
 This script requires modules/libraries: 
