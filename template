@@ -3,7 +3,7 @@ conky.config = {
 
 -- Conky settings #
 	background = false,
-	update_interval = 14400,
+	update_interval = 1,
 	double_buffer = true,
 	no_buffers = true,
 
@@ -36,9 +36,6 @@ conky.config = {
 };
 
 conky.text = [[
-${execp curl -o ~/conky-yasno/yasno.pdf -f "$(cat ~/conky-yasno/.private_url.txt)"}
-${execp chmod 644 ~/conky-yasno/yasno.pdf}
-${execp pdftoppm -singlefile -png ~/conky-yasno/yasno.pdf ~/conky-yasno/yasno}
+${execpi 3600 ~/conky-yasno/scripts/background.sh}
 ${image ~/conky-yasno/yasno.png -p 0,0 -s 620x877}
-${execp rm ~/conky-yasno/yasno.png}
 ]];
