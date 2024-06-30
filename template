@@ -37,5 +37,6 @@ conky.config = {
 
 conky.text = [[
 ${execpi 3600 ~/conky-yasno/scripts/background.sh}
+${execpi 60 ~/conky-yasno/scripts/status.sh}
 ${image ~/conky-yasno/yasno.png -p 0,0 -s 620x877}
 ]];
